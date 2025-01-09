@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* styles/globals.css */
+.sidebar {
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.sidebar .nav-link.active {
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* NavBar  */
+.navbar {
+  background-color: #ffffff; /* White background */
+}
+
+.navbar-brand img {
+  height: 30px; /* Adjust the logo size */
+}
+
+.form-control {
+  border-radius: 0; /* Square edges for the search bar */
+}
+
+button {
+  border-radius: 0; /* Square edges for the search button */
+}
+
+.nav-link {
+  color: #343a40 !important; /* Dark gray text */
+}
+
+.nav-link:hover {
+  color: #0d6efd !important; /* Bootstrap's primary color on hover */
+}
+
+.btn-outline-success {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-success:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+
+/* CategoryNavBar */
+
+.category-navbar {
+  background-color: #ffffff; /* White background */
+  font-size: 14px; /* Adjust font size */
+}
+
+.category-navbar .nav-link {
+  color: #343a40; /* Dark gray color for text */
+  padding: 0.5rem 1rem; /* Add spacing */
+  text-decoration: none;
+}
+
+.category-navbar .nav-link:hover {
+  color: #0d6efd; /* Bootstrap's primary blue on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.category-navbar .nav-link.active {
+  font-weight: bold;
+  color: #0d6efd; /* Highlight active link */
+}
+
+/* Gigs Cards  */
+.gig-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gig-card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.gig-title {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.gig-rating span {
+  font-size: 12px;
+}
+
+.gig-price {
+  font-size: 16px;
+  color: #333;
+}
+
+/* booking  */
+ #booking-form {
+   z-index: 1020;  /*Ensures the sticky form stays above other elements  */
+  border-bottom: 1px solid #ddd; /* Optional border for better separation */
+}
+
+/* body {
+  margin: 0;
+  overflow: hidden; /* Prevents unwanted scrolling when the map is full screen } */
+  popup
+  .popup {
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  
+  .popup h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  /* Sidebar Styling */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+
+/* Active Navigation Link */
+.sidebar .nav-link.active {
+  background-color: var(--active-bg);
+  color: var(--active-text);
+}
+
+/* Theme Variables */
+:root {
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #000000;
+  --active-bg: #e0e0e0;
+  --active-text: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sidebar-bg: #1a1a1a;
+    --sidebar-text: #ffffff;
+    --active-bg: #333333;
+    --active-text: #ffffff;
+  }
+}
