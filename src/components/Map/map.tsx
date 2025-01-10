@@ -16,7 +16,7 @@ const center = {
 // Component to handle map click and update marker position
 const LocationMarker: React.FC<{ position: L.LatLngExpression; setPosition: (pos: L.LatLngExpression) => void, setLocation: (location: string) => void }> = ({ position, setPosition, setLocation }) => {
   useMapEvents({
-    click(event: any) {
+    click(event) {
       const { latlng } = event;
       setPosition(latlng);
       fetchLocation(latlng);

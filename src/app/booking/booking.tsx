@@ -1,12 +1,10 @@
 import OpenStreetMapExample from "@/components/Map/map";
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Form, InputGroup, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const BookingLayout: React.FC = () => {
     const [mapHeight, setMapHeight] = useState<string>("400px");
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const [location, setLocation] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
   // Dynamically adjust map height to fill the viewport
