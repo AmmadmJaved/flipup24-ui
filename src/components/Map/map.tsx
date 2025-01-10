@@ -53,7 +53,7 @@ const OpenStreetMapExample: React.FC<OpenStreetMapExampleProps> = ({ onLocationS
 
   useEffect(() => {
       onLocationSelect(locationName);
-  }, [markerPosition, onLocationSelect]);
+  }, [markerPosition, onLocationSelect,locationName]);
 
   return (
     <MapContainer center={center} zoom={13} style={{ height: '400px', width: '100%' }}>

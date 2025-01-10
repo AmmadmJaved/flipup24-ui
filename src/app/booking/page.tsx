@@ -1,10 +1,12 @@
 'use client'
+import GigCardGrid from "@/components/gig_card_grid/gig_card_grid";
 import Layout from "@/components/layout.tsx/page-layout";
-import BookingLayout from "./booking";
+// import BookingLayout from "./booking";
 export default function Booking() {
   return (
     <Layout>
-    <BookingLayout/>
+      <GigCardGrid/>
+    {/* <BookingLayout/> */}
     </Layout>
   );
 }
