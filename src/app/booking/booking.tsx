@@ -1,3 +1,4 @@
+'use client';
 import OpenStreetMapExample from "@/components/Map/map";
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
@@ -8,23 +9,26 @@ const BookingLayout: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
   // Dynamically adjust map height to fill the viewport
-  useEffect(() => {
+  // useEffect(() => {
     
-  
-  
-    const updateMapHeight = () => {
-      const formHeight = document.getElementById("booking-form")?.offsetHeight || 0;
-      const viewportHeight = window.innerHeight;
-      setMapHeight(`${viewportHeight - formHeight - 16}px`); // Subtract form height + margin
-    };
+  //   const updateMapHeight = () => {
+  //     const formHeight = document.getElementById("booking-form")?.offsetHeight || 0;
+  //     if (typeof window !== undefined) {
+  //       const viewportHeight = window.innerHeight;
+  //     setMapHeight(`${viewportHeight - formHeight - 16}px`); // Subtract form height + margin
+  //     }
+      
+  //   };
 
-    updateMapHeight();
-    window.addEventListener("resize", updateMapHeight);
+  //   updateMapHeight();
+  //   if (typeof window !== undefined) {
+  //   window.addEventListener("resize", updateMapHeight);
+  //   }
 
-    return () => {
-      window.removeEventListener("resize", updateMapHeight);
-    };
-  }, []);
+  //   return () => {
+  //     if (typeof window !== undefined) {window.removeEventListener("resize", updateMapHeight);}    
+  //   };
+  // }, []);
  
 
   const handleLocationSelect = (location: string) => {
