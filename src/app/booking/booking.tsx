@@ -1,10 +1,10 @@
 'use client';
 import OpenStreetMapExample from "@/components/Map/map";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const BookingLayout: React.FC = () => {
-    const [mapHeight, setMapHeight] = useState<string>("400px");
+    const [mapHeight] = useState<string>("400px");
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
 
