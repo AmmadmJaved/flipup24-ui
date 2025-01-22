@@ -14,7 +14,7 @@ const gigData = [
   },
   {
     image: "https://via.placeholder.com/300x200",
-    title: "I will do 3D modeling, product design, rendering, STL 3D printing",
+    title: "I will do 3D modeling, product design, rendering, STL 3D printing.",
     sellerName: "Pico",
     rating: 4.9,
     reviews: 215,
