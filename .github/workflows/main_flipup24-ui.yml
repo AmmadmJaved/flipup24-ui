@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip -r release.zip .next package.json node_modules public
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -66,6 +66,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'Flipup24-ui'
-          slot-name: 'Production'
+          slot-name: 'production'
           package: release.zip
           
