@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "start": "next start"
+    "start": "node build/standalone/server.js"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.5",

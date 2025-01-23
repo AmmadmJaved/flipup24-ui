@@ -8,6 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'leaflet/dist/leaflet.css';
 
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
