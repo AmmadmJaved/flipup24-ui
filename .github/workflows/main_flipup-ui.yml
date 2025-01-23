@@ -29,7 +29,7 @@ jobs:
           mv ./public ./build/standalone
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip /build/standalone
+        run: zip -r release.zip ./build/standalone public
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
