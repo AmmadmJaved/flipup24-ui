@@ -29,7 +29,7 @@ jobs:
           mv ./public ./build/standalone
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip .next package.json node_modules public
+        run: zip -r release.zip /build/standalone
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -68,5 +68,5 @@ jobs:
         with:
           app-name: 'flipup-ui'
           slot-name: 'Production'
-          package: ./build/standalone
+          package: release.zip
           
