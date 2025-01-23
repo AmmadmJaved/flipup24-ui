@@ -1,6 +1,8 @@
-import type { NextConfig } from "next";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { outputFileTracing: true }, // Include only required files for the build
+  reactStrictMode: true,
+  distDir: 'build',
+  output: 'standalone',
 };
-module.exports = nextConfig;
+
+export default nextConfig;
