@@ -1,46 +1,33 @@
-'use client'
-import React from "react";
-import { Nav, Container } from "react-bootstrap";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Wrench, Home, Car, User, Book,  } from 'lucide-react';
 
-const CategoryNavBar: React.FC = () => {
+const categories = [
+  { name: 'Electronics', icon: <Wrench size={20} /> },
+  { name: 'Home Services', icon: <Home size={20} /> },
+  { name: 'Auto Repair', icon: <Car size={20} /> },
+  { name: 'Personal Care', icon: <User size={20} /> },
+  { name: 'Education', icon: <Book size={20} /> },
+  { name: 'Pet Services', icon: <User  size={20} /> },
+];
+
+export default function CategoryNavbar() {
   return (
-    <div className="category-navbar border-bottom py-2 bg-white">
+    <div className="category-navbar border-b py-4 bg-white shadow-sm">
       <Container>
-        <Nav className="justify-content-center">
-          <Nav.Item>
-            <Nav.Link href="/graphics-design">Graphics & Design</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/programming-tech">Programming & Tech</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/digital-marketing">Digital Marketing</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/video-animation">Video & Animation</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/writing-translation">Writing & Translation</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/music-audio">Music & Audio</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/business">Business</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/finance">Finance</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/ai-services">AI Services</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/personal-growth">Personal Growth</Nav.Link>
-          </Nav.Item>
-        </Nav>
+        <nav className="flex justify-center hidden md:flex  space-x-12">
+          {categories.map((category, index) => (
+            <a
+              key={index}
+              href={`/${category.name.toLowerCase().replace(/ /g, '-')}`}
+              className="text-gray-700 hover:text-green-500 flex items-center space-x-1"
+            >
+              {category.icon}
+              <span className="font-medium">{category.name}</span>
+            </a>
+          ))}
+        </nav>
       </Container>
     </div>
   );
-};
-
-export default CategoryNavBar;
+}

@@ -1,56 +1,46 @@
 'use client'
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Button, NavDropdown, Container } from "react-bootstrap";
+import { Navbar} from "react-bootstrap";
+import { Home, Phone, HelpCircle, LogIn, UserPlus } from 'lucide-react';
 
 const Header: React.FC = () => {
   return (
     <Navbar bg="light" expand="lg" className="shadow-sm py-3">
-      <Container>
-        {/* Logo */}
-        <Navbar.Brand href="/">
-          <img
-            src="/flipup.png" // Replace with your logo's public\flipup.png
-            alt="Filp Up"
-            height="30"
-          />
-        </Navbar.Brand>
-
-        {/* Toggle Button for Mobile */}
-        <Navbar.Toggle aria-controls="navbar-nav" />
-
-        <Navbar.Collapse id="navbar-nav">
-          {/* Search Bar */}
-          <Form className="d-flex mx-auto" style={{ width: "50%" }}>
-            <FormControl
-              type="search"
-              placeholder="What service are you looking for today?"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="dark">Search</Button>
-          </Form>
-
-          {/* Navigation Links */}
-          <Nav className="ms-auto">
-            <NavDropdown title="Flip UP Pro" id="fiverr-pro-dropdown">
-              <NavDropdown.Item href="/pro">Overview</NavDropdown.Item>
-              <NavDropdown.Item href="/pro/benefits">Benefits</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Explore" id="explore-dropdown">
-              <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
-              <NavDropdown.Item href="/trending">Trending</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="/language">
-              <i className="bi bi-globe"></i> English
-            </Nav.Link>
-            <Nav.Link href="/seller">Become a Partner</Nav.Link>
-            <Nav.Link href="/login">Sign in</Nav.Link>
-            <Button variant="outline-success" href="/join" className="ms-2">
-              Join
-            </Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+         {/* Header */}
+      <header className="bg-white shadow-sm col-lg-12">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-2 text-green-500 font-bold text-2xl">
+              <Home size={24} />
+              <span>FLIPUP24</span>
+            </div>
+            
+            <nav className="hidden md:flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+                <Home size={18} />
+                <span>HOME</span>
+              </a>
+              <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+                <Phone size={18} />
+                <span>CONTACT US</span>
+              </a>
+              <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+                <HelpCircle size={18} />
+                <span>FAQ</span>
+              </a>
+              <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+                <LogIn size={18} />
+                <span>LOGIN</span>
+              </a>
+              <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1 float-right pl-0">
+                <UserPlus size={18} />
+                <span>SIGNUP</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+       
     </Navbar>
   );
 };

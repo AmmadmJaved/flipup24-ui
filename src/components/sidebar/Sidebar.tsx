@@ -38,6 +38,7 @@ const Sidebar: React.FC = () => {
         ))}
       </Nav>
 
+
       {/* Footer */}
       <div className="mt-auto p-3 border-top text-center">
         <p className="small mb-0">© 2025 Your Company</p>
