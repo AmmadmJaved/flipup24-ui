@@ -1,6 +1,7 @@
 'use client'
-import Layout from "@/components/layout.tsx/page-layout";
+import Layout from "@/components/pagelayout.tsx/page-layout";
 import LandingPage from "./home/page";
+
 
 export default function Home() {
   return (

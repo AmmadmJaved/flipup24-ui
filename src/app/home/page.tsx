@@ -2,9 +2,18 @@
 import React, { useState } from 'react';
 import { Star } from 'lucide-react';
 
-function App() {
+function LandingPage() {
   const [selectedCategory, setSelectedCategory] = useState('HOUSEHOLD');
   const [searchKeyword, setSearchKeyword] = useState('');
+
+  const categories = [
+    'Electronics',
+    'Home Services',
+    'Auto Repair',
+    'Personal Care',
+    'Education',
+    'Pet Services'
+  ];
 
   const partners = {
     HOUSEHOLD: [
@@ -24,22 +33,39 @@ function App() {
     ]
   };
 
-
   return (
-    <div className="min-h-screen bg-gray-50 w-100">
-        <div className="grid grid-cols-12 gap-8 pt-4 w-100">
+    // <PageLayout>
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid  md:grid-cols-12 gap-8">
+          {/* Categories */}
+          <div className="md:col-span-3">
+            <div className="bg-white rounded-lg shadow p-4">
+              <h2 className="font-bold text-lg mb-4 bg-yellow-300 px-3 py-1">CATEGORY</h2>
+              <ul className="space-y-2">
+                {categories.map((category) => (
+                  <li key={category}>
+                    <button className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded flex items-center justify-between">
+                      <span>{category}</span>
+                      <span>&gt;</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
           {/* Main Content */}
-          <div className="col-span-11">
+          <div className="md:col-span-9">
             {/* Search */}
-            <div className="flex mb-8">
+            <div className="flex flex-col sm:flex-row mb-8 gap-4">
               <input
                 type="text"
                 placeholder="KEYWORD"
                 value={searchKeyword}
                 onChange={(e) => setSearchKeyword(e.target.value)}
-                className="flex-1 p-3 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="flex-1 p-3 border border-gray-300 rounded-lg sm:rounded-l-lg sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-green-500"
               />
-              <button className="bg-red-500 text-white px-8 py-3 rounded-r font-bold">
+              <button className="bg-red-500 text-white px-8 py-3 rounded-lg sm:rounded-l-none sm:rounded-r-lg font-bold whitespace-nowrap">
                 BOOK SERVICE
               </button>
             </div>
@@ -48,7 +74,7 @@ function App() {
             <div className="bg-white rounded-lg shadow p-6">
               <h2 className="text-2xl font-bold mb-6">TOP RATED PARTNER</h2>
               
-              <div className="flex space-x-4 mb-8">
+              <div className="flex flex-wrap gap-4 mb-8">
                 {['HOUSEHOLD', 'AUTOMOBILE', 'DELIVERY SERVICE'].map((category) => (
                   <button
                     key={category}
@@ -64,8 +90,8 @@ function App() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-6">
-                {partners[selectedCategory as keyof typeof partners].map((partner, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {partners[selectedCategory as keyof typeof partners].map((partner, index) => (
                   <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                     <img
                       src={partner.image}
@@ -97,8 +123,9 @@ function App() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
+    // </PageLayout>
   );
 }
 
-export default App;
+export default LandingPage;
