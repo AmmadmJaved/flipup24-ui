@@ -21,6 +21,15 @@ const Sidebar: React.FC<SidebarProps> = ({
     { id: 'profile', label: 'Profile', icon: <User className="w-5 h-5" /> },
   ];
 
+  const categories = [
+    'Electronics',
+    'Home Services',
+    'Auto Repair',
+    'Personal Care',
+    'Education',
+    'Pet Services'
+  ];
+
   return (
     <>
       {/* Mobile overlay */}
@@ -30,7 +39,6 @@ const Sidebar: React.FC<SidebarProps> = ({
           onClick={onClose}
         />
       )}
-
       {/* Sidebar */}
       <div className={`
         fixed md:static inset-y-0 left-0 w-64 bg-white shadow-sm transform 
@@ -46,8 +54,23 @@ const Sidebar: React.FC<SidebarProps> = ({
             <X size={24} />
           </button>
         </div>
+        {/* Categories */}
+       <div className="md:col-span-3">
+            <div className="bg-white rounded-lg shadow p-4">
+              <h2 className="font-bold text-lg mb-4 bg-yellow-300 px-3 py-1">CATEGORY</h2>
+              <ul className="space-y-2">
+                {categories.map((category) => (
+                  <li key={category}>
+                    <button className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded flex items-center justify-between">
+                      <span>{category}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-        <nav className="px-4 py-6">
+        {/* <nav className="px-4 py-6">
           <ul className="space-y-2">
             {menuItems.map((item) => (
               <li key={item.id}>
@@ -70,7 +93,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               </li>
             ))}
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </>
   );

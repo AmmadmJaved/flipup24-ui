@@ -6,15 +6,6 @@ function LandingPage() {
   const [selectedCategory, setSelectedCategory] = useState('HOUSEHOLD');
   const [searchKeyword, setSearchKeyword] = useState('');
 
-  const categories = [
-    'Electronics',
-    'Home Services',
-    'Auto Repair',
-    'Personal Care',
-    'Education',
-    'Pet Services'
-  ];
-
   const partners = {
     HOUSEHOLD: [
       { name: 'Home Clean Pro', rating: 4.8, image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=300&q=80' },
@@ -37,23 +28,7 @@ function LandingPage() {
     // <PageLayout>
       <div className="container mx-auto px-4 py-8">
         <div className="grid  md:grid-cols-12 gap-8">
-          {/* Categories */}
-          <div className="md:col-span-3">
-            <div className="bg-white rounded-lg shadow p-4">
-              <h2 className="font-bold text-lg mb-4 bg-yellow-300 px-3 py-1">CATEGORY</h2>
-              <ul className="space-y-2">
-                {categories.map((category) => (
-                  <li key={category}>
-                    <button className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded flex items-center justify-between">
-                      <span>{category}</span>
-                      <span>&gt;</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
+         
           {/* Main Content */}
           <div className="md:col-span-9">
             {/* Search */}
