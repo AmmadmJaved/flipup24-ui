@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Calendar, Bell, User, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
