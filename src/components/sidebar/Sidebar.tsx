@@ -11,15 +11,15 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ 
   isOpen, 
   onClose, 
-  activeItem = 'home', 
-  onItemClick 
+  // activeItem = 'home', 
+  // onItemClick 
 }) => {
-  const menuItems = [
-    { id: 'home', label: 'Home', icon: <Home className="w-5 h-5" /> },
-    { id: 'bookings', label: 'Bookings', icon: <Calendar className="w-5 h-5" /> },
-    { id: 'notifications', label: 'Notifications', icon: <Bell className="w-5 h-5" /> },
-    { id: 'profile', label: 'Profile', icon: <User className="w-5 h-5" /> },
-  ];
+  // const menuItems = [
+  //   { id: 'home', label: 'Home', icon: <Home className="w-5 h-5" /> },
+  //   { id: 'bookings', label: 'Bookings', icon: <Calendar className="w-5 h-5" /> },
+  //   { id: 'notifications', label: 'Notifications', icon: <Bell className="w-5 h-5" /> },
+  //   { id: 'profile', label: 'Profile', icon: <User className="w-5 h-5" /> },
+  // ];
 
   const categories = [
     'Electronics',
