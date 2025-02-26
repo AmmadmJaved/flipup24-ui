@@ -6,6 +6,6 @@ import { getProfile } from "../controller/user.controller";
 const router = express.Router();
 
 // Profile route, protected by JWT
-// router.get("/profile", protect, getProfile); todo next to implement
+router.get("/profile", getProfile); //todo next to implement
 
 export default router;

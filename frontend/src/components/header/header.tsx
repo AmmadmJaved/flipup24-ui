@@ -36,11 +36,11 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
               <HelpCircle size={18} />
               <span>FAQ</span>
             </a>
-            <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+            <a href="/login" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
               <LogIn size={18} />
               <span>LOGIN</span>
             </a>
-            <a href="#" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
+            <a href="/register" className="text-gray-700 hover:text-green-500 flex items-center space-x-1">
               <UserPlus size={18} />
               <span>SIGNUP</span>
             </a>
