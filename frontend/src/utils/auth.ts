@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 
 // Secret key for JWT signing (In real apps, use environment variables)
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET || 'mysecretkey';
 
 // Function to sign a JWT token
 export const signToken = (payload: object) => {

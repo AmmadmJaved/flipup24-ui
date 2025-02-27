@@ -1,8 +1,8 @@
 // context/AuthContext.tsx
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { parseCookies, setCookie, destroyCookie } from 'nookies';
 import { verifyToken } from '@/utils/auth';
+import  { jwtDecode } from 'jwt-decode';
 
 
 interface User {
@@ -35,34 +35,40 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    const cookies = parseCookies();
-    const token = cookies.token;
+    if (typeof window !== "undefined") {
+
+        // const token = cookies.token;
+        const token = localStorage.getItem("token");
+            
+        // If a token exists, verify it and set user state
+        if (token) {
+          try {
+            const userData = verifyToken(token);
+            const decoded = jwtDecode<{ id: string; name: string; email: string }>(token);
+          if (decoded) {
+            setUser(decoded as User); // Set the user if the token is valid
+          }
+          } catch (error) {
+            console.error("Invalid token", error);
+            router.push('/login');
+          }
+          }
+          else {
+            router.push('/login'); // Redirect to login if token is invalid
+          }
+      } 
     
-    // If a token exists, verify it and set user state
-    if (token) {
-      const userData = verifyToken(token);
-      if (userData) {
-        setUser(userData as User); // Set the user if the token is valid
-      } else {
-        destroyCookie(null, 'token'); // Remove invalid token if any
-        router.push('/login'); // Redirect to login if token is invalid
-      }
-    }
   }, [router]);
 
   const login = (userData: User, token: string) => {
     setUser(userData);
-    setCookie(null, 'token', token, {
-      maxAge: 30 * 24 * 60 * 60, // Cookie expires in 30 days
-      path: '/',
-      httpOnly: true, // Cookie is only accessible by the server
-      secure: process.env.NODE_ENV === 'production', // Use secure cookie in production
-    });
+  localStorage.setItem("token", token); // Store token in localStorage
   };
 
   const logout = () => {
     setUser(null);
-    destroyCookie(null, 'token');
+    localStorage.removeItem("token");
+    window.location.reload(); // Refresh page to update state
     router.push('/login'); // Redirect to login page on logout
   };
 
