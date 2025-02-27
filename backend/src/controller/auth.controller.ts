@@ -7,8 +7,8 @@ export const register = async (req: any, res: Response) => {
     try {
       // Logging the entire req.body to debug
       console.log("Request Body: ", req.body);
-      const { name, email, password } = req.body;
-      const result = await registerUser(name, email, password);
+      const { name, email, password,role } = req.body;
+      const result = await registerUser(name, email, password,role);
       res.status(201).json(result); // Respond with user and token
     } catch (error) {
       if (error instanceof Error) {

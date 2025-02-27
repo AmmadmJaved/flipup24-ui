@@ -20,3 +20,21 @@ export const protect = async (req: Request, res: Response, next: NextFunction): 
      res.status(401).json({ message: "Invalid token" });
   }
 };
+
+
+// export const verifyRole = (roles: string[]) => {
+//   return (req: Request, res: Response, next: NextFunction): void => {
+//     // Type guard for user property
+//     if (!req.user?.role) {
+//       res.status(403).json({ message: "Access Denied - No authentication" });
+//       return;
+//     }
+
+//     if (!roles.includes(req.user.role)) {
+//       res.status(403).json({ message: "Access Denied - Insufficient privileges" });
+//       return;
+//     }
+
+//     next();
+//   };
+// };
