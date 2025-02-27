@@ -1,6 +1,5 @@
-import React from 'react';
-import { X } from 'lucide-react';
-
+import React, { useState } from 'react';
+import { X,ChevronDown, ChevronRight, User } from 'lucide-react';
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -8,12 +7,9 @@ interface SidebarProps {
   onItemClick?: (item: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ 
-  isOpen, 
-  onClose, 
-  // activeItem = 'home', 
-  // onItemClick 
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({isOpen,   onClose, }) => {
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   // const menuItems = [
   //   { id: 'home', label: 'Home', icon: <Home className="w-5 h-5" /> },
   //   { id: 'bookings', label: 'Bookings', icon: <Calendar className="w-5 h-5" /> },
@@ -94,6 +90,19 @@ const Sidebar: React.FC<SidebarProps> = ({
             ))}
           </ul>
         </nav> */}
+      </div>
+      {/* Profile - Fixed at Bottom */}
+      <div className="border-t">
+        <button
+          className="flex items-center justify-between px-4 py-3 w-full hover:bg-gray-100"
+          onClick={() => setIsProfileOpen(!isProfileOpen)}
+        >
+          <div className="flex items-center space-x-3">
+            <User className="w-6 h-6 text-gray-500" />
+            <span>Matt Thompson</span>
+          </div>
+          {isProfileOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+        </button>
       </div>
     </>
   );

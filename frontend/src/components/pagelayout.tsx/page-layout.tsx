@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
 import { useAuth } from "@/context/AuthContext";
 import Header from "../header/header";
+import Sidebar1 from "../sidebar/Sidebar1";
+import Header1 from "../header/Header1";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,17 +18,20 @@ const PageLayout: React.FC<LayoutProps> = ({ children }) => {
       {user && (
         <>
           {/* Fixed Header */}
-          <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          
 
           <div className="flex flex-1">
             {/* Sidebar (Hidden on Small Screens) */}
-            <Sidebar
+            {/* <Sidebar
               isOpen={isSidebarOpen}
               onClose={() => setIsSidebarOpen(false)}
-            />
+            /> */}
+            <Sidebar1/>
+            {/* <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} /> */}
 
             {/* Main Content Area */}
-            <main className="flex-1 p-4 mt-16 md:mt-0">
+            <main>
+            <Header1/> 
               {children}
             </main>
           </div>

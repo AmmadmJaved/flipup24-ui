@@ -14,20 +14,6 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo & Mobile Menu Button */}
-          <div className="flex items-center">
-            <button
-              className="md:hidden mr-2 p-2 hover:bg-gray-100 rounded-lg"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-            <a href="/" className="flex items-center space-x-2 text-green-500 font-bold text-2xl">
-              <Home size={24} />
-              <span>FLIPUP24</span>
-            </a>
-          </div>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
             <a href="#" className="hover:text-green-500 flex items-center space-x-1">
