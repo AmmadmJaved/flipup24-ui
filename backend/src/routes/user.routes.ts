@@ -1,21 +1,20 @@
 import express from "express";
 import { protect } from "../middlewares/auth.middleware";
-import { getProfile } from "../controller/user.controller";
+import { deleteUser, getAll, getById, getProfile, updateUser } from "../controller/user.controller";
 
 
 const router = express.Router();
 
 // Profile route, protected by JWT
 router.get("/profile", getProfile); //todo next to implement
-
-// Protected route for customers
-// router.get("/customer-dashboard", verifyRole(["customer"]), (req, res) => {
-//     res.json({ message: "Welcome Customer!" });
-//   });
-  
-//   // Protected route for partners
-//   router.get("/partner-dashboard", verifyRole(["partner"]), (req, res) => {
-//     res.json({ message: "Welcome Partner!" });
-//   });
+router.get('/', getAll); // Get all users
+router.get('/:id', getById); // Get user by ID
+router.put('/:id', updateUser); // Update user by ID
+router.delete('/:id', deleteUser); // Delete user by ID
 
 export default router;
+
+// Get all users: GET http://localhost:5000/api/users
+// Get user by ID: GET http://localhost:5000/api/users/:id
+// Update user: PUT http://localhost:5000/api/users/:id
+// Delete user: DELETE http://localhost:5000/api/users/:id

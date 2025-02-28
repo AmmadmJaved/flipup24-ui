@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'leaflet/dist/leaflet.css';
+import { AuthProvider } from "@/context/AuthContext";
 
 
 
@@ -33,7 +34,10 @@ export default function RootLayout({  children,}: Readonly<{  children: React.Re
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthProvider>
         {children}
+        </AuthProvider>
+        
       </body>
     </html>
   );
