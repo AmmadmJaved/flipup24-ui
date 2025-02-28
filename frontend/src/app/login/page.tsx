@@ -14,11 +14,11 @@ const Login = () => {
     // Handle login submission logic here
     console.log("Username:", email);
     console.log("Password:", password);
-    debugger;
     try {
           const token = await loginUser({ email, password });
           localStorage.setItem("token", token); // Save token to localStorage
           router.push("/"); // Redirect to the home page after successful login
+          window.location.href = '/';
         } catch (err: any) {
           setError(err.message);
         }

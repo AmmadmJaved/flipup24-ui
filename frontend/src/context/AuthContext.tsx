@@ -48,6 +48,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             const decoded = jwtDecode<{ id: string; name: string; email: string }>(token);
           if (decoded) {
             setUser(decoded as User); // Set the user if the token is valid
+            // router.push('/');
+            // window.location.reload();
+            // window.location.href = '/'; // Redirect to home page if token is valid
           }
           } catch (error) {
             console.error("Invalid token", error);
@@ -55,7 +58,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           }
           }
           else {
-            router.push('/login'); // Redirect to login if token is invalid
+            // router.push('/login'); // Redirect to login if token is invalid
           }
       } 
     

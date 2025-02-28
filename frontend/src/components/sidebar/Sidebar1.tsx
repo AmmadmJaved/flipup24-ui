@@ -26,8 +26,8 @@ const Sidebar1: React.FC = () => {
       <nav className="mt-4">
         <SidebarItem icon={<Home />} label="Dashboard" isMinimized={isMinimized} active route="/" />
         <SidebarItem icon={<Package />} label="Users" isMinimized={isMinimized} route="/user" />
-        <SidebarItem icon={<ShoppingCart />} label="Store" isMinimized={isMinimized} route="/" />
-        <SidebarItem icon={<MessageSquare />} label="Messages" isMinimized={isMinimized} route="/" />
+        <SidebarItem icon={<ShoppingCart />} label="Service Request" isMinimized={isMinimized} route="/customer-request" />
+        <SidebarItem icon={<MessageSquare />} label="Messages" isMinimized={isMinimized} route="/chat" />
         <SidebarItem icon={<BarChart />} label="Statistics" isMinimized={isMinimized} route="/" />
         <SidebarItem icon={<FileText />} label="Invoices" isMinimized={isMinimized} badge="1" route="/" />
         <SidebarItem icon={<CheckSquare />} label="To Do list" isMinimized={isMinimized} route="/" />

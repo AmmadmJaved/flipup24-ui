@@ -7,8 +7,13 @@ const router = express.Router();
 // Create a new request (Customer)
 router.post("/create", async (req, res) => {
   try {
-    const newRequest = new requestModel({ customerId: req.body.customerId });
+    
+    const requestData = { customerId: req.body.customerId, service: req.body.serviceName, location: req.body.location, cost: req.body.cost };
+    console.log("Request Body: ", requestData);
+    const newRequest = new requestModel({ customerId: req.body.customerId, service: req.body.serviceName, location: req.body.location, cost: req.body.cost });
+    console.log("Request format: ", newRequest);
     await newRequest.save();
+    console.log("save newRequest: ", newRequest);
     res.status(201).json(newRequest);
   } catch (error) {
     res.status(500).json({ error: "Error creating request" });
